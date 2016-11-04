@@ -1,0 +1,65 @@
+/* Element Selectors */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;/*vertical height*/
+  margin: 0;
+  line-height: 100%;
+  text-align: center;/*centers other things as well*/
+  font-family: sans-serif;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.nav {
+  order: -1;/* move the nav to the top */
+  padding: 1em;
+  background: rgb(146, 194, 215);
+}
+
+.footer {
+  padding: 1em;
+  background: rgb(27, 93, 110);
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;/*moves .footer to the bottom of the screen*/
+}
+
+.main {
+  padding: 1em;
+  background: rgb(187, 179, 135);
+  text-align: center;
+}
+
+.aside {
+  padding: 1em;
+  text-align: center;
+  background: rgb(224, 220, 199);
+}
+
+/*if viewport is smaller than 30em*/
+@media (max-width: 30em) {
+  .main {
+    flex: 1 0 auto;/**/
+  }
+}
+
+/*if viewport is bigger than 30em*/
+@media (min-width: 30em) {
+  .nav {
+    display: block;/**/
+  }
+  .wrapper {
+    flex-direction: row;
+  }
+  .main {
+    flex: 1 1 auto;/*sizes things in relation to each other*/
+  }
+  .aside{
+    width: 20%;
+  }
+}
